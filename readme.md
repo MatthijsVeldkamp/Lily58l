@@ -6,19 +6,13 @@ A modified Lily58 pcb, with underglow, per key rgb light and rotary encoder supp
 - 6x SK6812 Mini led's per side for underglow
 - Support for 1 rotary encoder on each side
 
-Left encoder: volume up/down, next/previous track on RAISE layer  
-Right encoder: cursor down/up, right/left on LOWER layer
+# Flashing this keymap
+- Install QMK MSYS https://msys.qmk.fm/
+- Clone this repo
+- Save it to:
+    C:\Users\USERNAME\qmk_firmware\keyboards\lily58\keymaps\Lily58l
 
-* Keyboard Maintainer: BenRoe [GitHub](https://github.com/BenRoe) / [Twitter](https://twitter.com/keycapsss)
-* Hardware Supported: Pro Micro, or Elite-C
-* Hardware Availability: [Keycapsss.com](https://keycapsss.com)
-
-Make example for this keyboard (after setting up your build environment):
- 
-    make lily58/light:lily58l
-
-Flashing example for this keyboard:
-
-    make lily58/light:lily58l:flash
-    
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+You can then run the following command to flash the firmware to the left microcontroller:
+```bash
+qmk flash -kb lily58/rev1 -km lily58l -eCONVERT_TO=helio
+```
