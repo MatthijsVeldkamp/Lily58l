@@ -9,5 +9,5 @@
 
 You can then run the following command:
 ```bash
-    qmk flash -kb lily58/rev1 -km lily58l -eCONVERT_TO=helio
+qmk flash -kb lily58/rev1 -km lily58l -eCONVERT_TO=helio
 ```
