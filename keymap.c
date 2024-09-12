@@ -33,20 +33,7 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* QWERTY
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |LCTRL |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
- * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |delete|
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |BackSP |RGUI| RAISE |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
- */
+
  
  [_QWERTY] = LAYOUT(
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
@@ -59,46 +46,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
   KC_SCRL, _______, _______, _______, _______, _______,                   _______, _______, _______,KC_MUTE, KC_VOLD, KC_VOLU,
   KC_NUM,   XXXXXXX,KC_UP,   XXXXXXX,   XXXXXXX,   XXXXXXX,            XXXXXXX,XXXXXXX,XXXXXXX,KC_MPRV,KC_MPLY,KC_MNXT,
-  KC_PSCR, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,  XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_PSCR, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,  XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_EQUAL,
   KC_CAPS, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______,  _______, _______, _______
 ),  
-/* RAISE
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |-------.    ,-------|      | Left | Down |  Up  |Right |      |
- * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
- * |  F7  |  F8  |  F9  | F10  | F11  | F12  |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| RGUI |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
- */
+
 
 [_RAISE] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, KC_PWR,
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-  KC_F1,  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   _______, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+  _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                                                       KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+  XXXXXXX,  KC_BTN1,    KC_MS_U,    KC_BTN2,    XXXXXXX,    XXXXXXX,                        XXXXXXX,    XXXXXXX,    KC_WBAK,    KC_WHOM,    KC_WFWD,    KC_F12,
+  XXXXXXX,  KC_MS_L,    KC_MS_D,   KC_MS_R,   XXXXXXX,   XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX,
+  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,   _______, _______,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, KC_PWR,
                              _______, _______, _______,  _______, _______,  _______, _______, _______
 ),
-/* ADJUST
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      |      |RGB ON| HUE+ | SAT+ | VAL+ |
- * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |      | MODE | HUE- | SAT- | VAL- |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| RGUI |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
- */
+
   [_ADJUST] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
